@@ -65,7 +65,6 @@ func saveHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/view/", viewHandler)
 	http.HandleFunc("/edit/", editHandler)
-	// http.HandleFunc("/save/", saveHandler)
-	// /にアクセスしたり/view以外にアクセスすると404NOTFOUND
+	http.HandleFunc("/save/", saveHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
